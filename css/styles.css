@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-color: #F21D2F;
+    --secondary-color: #0D4C73;
+    --dark-color: #172940;
+    --terciary-color: #D9B855;
+}
+
+::placeholder{
+    color: rgb(200, 200, 200)!important;
+}
+
+h1, h2{
+    font-family: "Orbitron", sans-serif;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+main {
+    min-height: 70vh;
+    position: relative;
+    background-image: linear-gradient(rgba(13, 76, 115, 0.95), rgba(13, 76, 115, 1)), url(../img/fondo-main.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header nav{
+    min-height: 5vh;
+}
+footer{
+    min-height: 25vh;
+}
+
+footer img{
+    max-height: 2rem;
+}
+
+p, h1, h2, h3, span, strong, button, input, label{
+    color: var(--dark-color);
+}
+
+.text-primary{
+    color: var(--main-color)!important;
+}
+
+.text-terciary{
+    color: var(--terciary-color)!important;
+}
+
+.text-blue{
+    color: var(--secondary-color);
+}
+
+.bg-dark{
+    background-color: var(--dark-color)!important;
+    color: white;
+}
+
+.bg-primary{
+    background-color: var(--terciary-color)!important;
+    color: var(--dark-color)!important;
+}
+
+.btn-primary{
+    background-color: var(--terciary-color);
+    border-color: var(--terciary-color)!important;
+    transition: all 300ms ease;
+}
+
+.btn-primary:hover{
+    opacity: .9;
+}
+
+.card-body .btn-primary:hover{
+    background-color: var(--terciary-color);
+}
+
+.text-none{
+    display: none;
+}
+
+nav img{
+    max-height: 2.5rem;
+}
+
+.nav-item > .nav-link{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+nav .active, .nav-link{ position: relative; transition: all 300ms ease;}
+
+nav .active::after{
+    content: '';
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: white;
+}
+
+.nav-item:hover{
+    opacity: .9;
+}
+
+.generos span{transition: all 300ms ease; cursor: default;}
+
+.generos span:hover{ opacity: .9;}
+
+.generos span:nth-child(odd){
+    background-color: var(--main-color);
+}
+
+.generos span:nth-child(even){
+    background-color: var(--secondary-color);
+}
+
+#BusquedaForm{
+    max-width: 700px;
+    margin: auto;
+}
+
+#peliculaEncontrada{
+    z-index: 2;
+}
+
+.toast{
+    z-index: 9999;
+    background-color: #0D4C7399;
+    color: white;
+}
+
+#seccionBusqueda img{
+    max-height: 120px;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.5))
+    drop-shadow(3px 3px 10px rgba(255, 0, 0, 0.6))
+    drop-shadow(6px 6px 18px rgba(255, 217, 0, 0.5));
+    z-index: 1;
+}
+
+#seccionBusqueda h2, #peliculaEncontrada h2, #peliculasFavoritas h2, #peliculasPopulares h2{
+    position: relative;
+}
+
+#peliculasPopulares h2::after{background-color: white;}
+
+#seccionBusqueda h2::after{background-color: var(--main-color);}
+
+#seccionBusqueda .btn-primary:hover, .toast .btn-primary:hover{
+    background-color: #D9B855;
+}
+
+#peliculaEncontrada h2::after, #peliculasFavoritas h2::after{background-color: var(--dark-color);}
+
+#peliculaEncontrada .card-body .btn-primary{
+    border: 1px solid white!important;
+}
+
+#seccionBusqueda h2::after, #peliculaEncontrada h2::after, #peliculasFavoritas h2::after, #peliculasPopulares h2::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+#seccionBusqueda:hover h2::after, #peliculaEncontrada:hover h2::after, #peliculasFavoritas:hover h2::after, #peliculasPopulares:hover h2::after{
+  opacity: 1;
+  transform: translate3D(0, 0.2em, 0);
+}
+
+.sombraResultados{
+    box-shadow: rgba(23, 41, 64, 0.5) 0px 10px 36px 0px, rgba(64, 23, 23, 0.1) 0px 0px 0px 1px;
+}
+
+#peliculaEncontrada h3, #peliculasFavoritas h3{
+    font-family: "Orbitron", sans-serif;
+}
+
+h2{
+    z-index: 2;
+}
+
+#seccionBusqueda{
+    max-width: 900px;
+}
+
+#busqueda, #Newsletter input{
+    background: none;
+}
+
+#Newsletter input{
+    border: none;
+    border-bottom: 1px solid grey;
+    border-radius: 0;
+}
+
+#busqueda:focus{
+    outline: 3px solid var(--secondary-color)!important;
+}
+
+.card{
+    background: none;
+    border: none;
+}
+
+.custom-shape-divider-bottom-1716147493 {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1716147493 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+
+.custom-shape-divider-bottom-1716147493 .shape-fill {
+    fill: var(--secondary-color);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.agregar-peli, .quitar-peli{
+    border: .13em solid white!important;
+}
+
+.quitar-peli{
+    background-color: var(--main-color)!important;
+}
+
+.quitar-peli i{
+    color: white;
+}
+
+.agregar-peli:hover{
+    opacity: 1!important;
+    background-color: var(--main-color)!important;
+}
+
+.quitar-peli:hover{
+    opacity: .9;
+}
+
+.btn-secondary{
+    background-color: var(--main-color)!important;
+    border-color: var(--main-color);
+}
+
+.btn-secondary:hover{
+    opacity: .85!important;
+    border-color: var(--main-color)!important;
+}
+
+.card-img > div{
+    display: inline-block;
+}
+
+#peliculasPopulares .div-img-botones .btn-primary{
+    background-color: var(--secondary-color);
+}
+
+#seccionDetalle article .card-body .agregar-peli{
+    background-color: var(--secondary-color);
+    border-width: 1px!important;
+}
+
+#seccionDetalle article .card-body .quitar-peli{
+    border-width: 1px!important;
+}
+
+.toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+button.swal2-confirm.swal2-styled{
+    background-color: var(--terciary-color);
+}
+
+
+
+@media screen and (max-width: 576px){
+    #seccionBusqueda{
+        padding-right: 1rem!important;
+        padding-left: 1rem!important;
+    }
+    #peliculaEncontrada, #peliculasFavoritas{
+        flex-wrap: wrap;
+        gap: 0rem!important;
+    }
+    #peliculaEncontrada img{
+        max-height: 300px;
+    }
+    
+    .card{
+        min-width: 150px;
+    }
+
+    .toast {
+        position: fixed;
+        right: 0rem;
+        margin: 0rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-item{
+        padding: 1em;
+        border-radius: .5em;
+    }
+
+    .activePadre{
+        background-color: white;
+    }
+
+    nav .active span, nav .active i{
+        color: var(--dark-color)!important;
+    }
+
+    nav .active::after{
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: flex-end;
+    }
+}
